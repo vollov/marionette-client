@@ -31,7 +31,6 @@
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
-        
         	<ul class="nav navbar-nav navbar-left">
 				<li><a href="/">HOME</a></li>
 				<li><a href="/#/service">SERVICE</a></li>
@@ -52,12 +51,16 @@
 
       </div>
     </nav>
-    
-    
- 	<div class="container">
+
+ 	<div id="app-container" class="container">
+		<div class="row">
+		<div class="nav-section col-md-3">
+			<h4>History</h4>
+		</div>
+	    <div class="page col-md-9">
 	
-    <div class="page"></div>
-		
+	    </div>
+	</div>
       <hr class="featurette-divider">
 
 	  <!-- FOOTER -->
@@ -99,6 +102,14 @@
 		</div>
 	</script>
 	
+	<script type="text/template" id="user-template">
+      <p><%- firstname %> <%- lastname %></p>
+    </script>
+    
+    <script type="text/x-handlebars-template" id="user-hb-template">
+      <p>{{firstname}} - {{lastname}}</p>
+    </script>
+    
 	<script type="text/x-handlebars-template" id="user-item-template">
 		<h2>User</h2>
 		<p>This is user item template</p>
@@ -141,15 +152,9 @@
 	<script src="lib/backbone/backbone.js"></script>
 	<script src="lib/backbone/backbone.marionette.js"></script>
 	<script src="lib/handlebars/handlebars.js"></script>
-	<script src="js/view/about.js"></script>
-	<script src="js/view/service.js"></script>
-	<script src="js/view/home.js"></script>
-	<script src="js/view/blog.js"></script>
-	<script src="js/model/user.js"></script>
-	<script src="js/model/blog.js"></script>
-	<script src="js/collection/user.js"></script>
+
 	
 	<script src="js/app.js"></script>
-	<script src="js/router.js"></script>
+
 </body>
 </html>

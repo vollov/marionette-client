@@ -13,7 +13,7 @@ var errorHandler = require('errorhandler');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 6000);
+app.set('port', process.env.PORT || 3000);
 app.use(favicon(__dirname + '/app/images/favicon.ico'));
 app.use(logger('dev'));
 app.use(methodOverride());
