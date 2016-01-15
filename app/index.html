@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Title</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<link href="css/style.css" rel="stylesheet" />
+<link href="images/favicon.ico" rel="shortcut icon">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Super Rent</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <strong class="navbar-brand"></strong>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+        
+        	<ul class="nav navbar-nav navbar-left">
+				<li><a href="/">HOME</a></li>
+				<li><a href="/#/service">SERVICE</a></li>
+				<li><a href="/#/about">ABOUT</a></li>
+				<li><a href="/#/posts">BLOG</a></li>
+            </ul>
+            
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+
+      </div>
+    </nav>
+    
+    
+ 	<div class="container">
+	
+    <div class="page"></div>
+		
+      <hr class="featurette-divider">
+
+	  <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </div> <!-- /container -->
+
+	<script type="text/template" id="service-template">
+		<h2>Service</h2>
+		<p>This is service-template</p>
+	</script>
+	
+	<script type="text/x-handlebars-template" id="about-template">
+		<h2>About {{name}} - {{age}}</h2>
+		<p>This is about-template</p>
+	</script>
+	
+	<script type="text/x-handlebars-template" id="post-list-template">
+		<h2>Post list</h2>
+		<ul></ul>
+	</script>
+	
+	<script type="text/x-handlebars-template" id="post-template">
+		<a href='/#/post/{{_id}}'>{{title}}</a>
+	</script>
+	
+	<script type="text/x-handlebars-template" id="home-template">
+		<h2>Home</h2>
+		<p>This is home template</p>
+		<div class='data'>
+			<ul>
+			{{#each users}}
+				<li><a href="/#/user/{{_id}}">{{firstname}} - {{age}}</a></li>
+				
+			{{/each}}
+			</ul>
+		</div>
+	</script>
+	
+	<script type="text/x-handlebars-template" id="user-item-template">
+		<h2>User</h2>
+		<p>This is user item template</p>
+		<h3><a href="/">HOME</a></h3>
+		<div class='data'>
+			{{user.firstname}} - {{user.lastname}}- {{user.age}}
+		</div>
+	</script>
+	
+	<script type="text/template" id="myLibrary-template">
+		<p>This is a myLibrary-template</p>
+	</script>
+	
+	
+  <script type="text/template" id="user-list-template">
+    <a href="#/new" class="btn btn-primary">New</a>
+    <hr />
+    <table class="table striped">
+      <thead>
+        <tr>
+          <th>First Name</th><th>Last Name</th><th>Age</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(users, function(user) { %>
+          <tr>
+            <td><%= htmlEncode(user.get('firstname')) %></td>
+            <td><%= htmlEncode(user.get('lastname')) %></td>
+            <td><%= htmlEncode(user.get('age')) %></td>
+            <td><a class="btn" href="#/edit/<%= user.id %>">Edit</a></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </script>
+  
+	<script src="lib/underscore/underscore.js"></script>
+	<script src="lib/jquery/jquery.js"></script>
+	<script src="lib/bootstrap/bootstrap.js"></script>
+	<script src="lib/backbone/backbone.js"></script>
+	<script src="lib/backbone/backbone.marionette.js"></script>
+	<script src="lib/handlebars/handlebars.js"></script>
+	<script src="js/view/about.js"></script>
+	<script src="js/view/service.js"></script>
+	<script src="js/view/home.js"></script>
+	<script src="js/view/blog.js"></script>
+	<script src="js/model/user.js"></script>
+	<script src="js/model/blog.js"></script>
+	<script src="js/collection/user.js"></script>
+	
+	<script src="js/app.js"></script>
+	<script src="js/router.js"></script>
+</body>
+</html>
